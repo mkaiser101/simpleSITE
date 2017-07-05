@@ -10,5 +10,10 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.listen(8080);
-  console.log('Server listening at http://localhost:8080')
+//app.listen(8080);
+  //console.log('Server listening at http://localhost:8080')
+
+  // start server
+  var server = app.listen(8080, function () {
+      console.log('Server listening at http://' + server.address().address + ':' + server.address().port);
+  });
